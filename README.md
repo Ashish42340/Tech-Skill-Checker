@@ -1,111 +1,380 @@
-🚀 Tech Skills Checker
-📌 Project Overview
+# Tech Skills Checker 🚀
 
-    Tech Skills Checker is a simple web application that helps users understand their technical skills.
-    It checks what skills you have and suggests what you should learn next to improve.
+A smart Flask-based web application that helps users check, manage, and analyze their technical skills.
 
-👉 The main goal of this project is to help users become job-ready by learning the right skills.
+The system helps students, beginners, and job seekers understand their current skills and compare them with industry requirements.
 
-🎯 Features
+---
 
-🔐 User Authentication (Login / Register)
-   Users can create an account and log in safely.
+# 📌 Project Overview
 
-📊 Skills Analysis Dashboard
-   Shows your skills in a simple dashboard so you can understand your level.
+Tech Skills Checker is a web application developed using Python Flask.
 
-🤖 Smart Skill Recommendations
-   Gives suggestions on what skills you should learn next.
+The application allows users to:
 
-🌐 Job/Skill Data Scraping
-    Collects latest skill trends from the internet.
+* Create account
+* Login securely
+* Add technical skills
+* Track skill levels
+* Analyze job requirements
+* Get job recommendations
+* Compare skills with market demands
 
-👤 User Profile Management
-   Users can manage and update their profile.
+This project is useful for:
 
-📈 Performance Tracking
-   Tracks your progress and improvement over time.
+* Students
+* Freshers
+* Developers
+* Job seekers
+* Learners
 
-🛠️ Tech Stack
+---
 
-  Frontend: HTML, CSS, JavaScript
+# ✨ Features
 
-  Backend: Python (Flask)
+## 🔐 User Authentication
 
-  Database: SQLite
+Users can:
 
-  Authentication: Flask-Login
+* Register account
+* Login securely
+* Logout safely
+* Manage sessions
 
-Other: Web Scraping
+---
 
-📂 Project Structure
-  tech-skills-checker/
-│── app.py              # Main application
-│── config.py           # Settings file
-│── init_db.py          # Create database
-│── models/             # Database models
-│── routes/             # App routes
-│── scraper/            # Data collection code
-│── static/             # CSS & JS files
-│── templates/          # HTML files
-│── requirements.txt    # Required libraries
+## 💻 Skill Management
 
+Users can:
 
+* Add technical skills
+* Update skills
+* Delete skills
+* Set proficiency levels
 
-⚙️ Installation & Setup
+Example:
 
-1️⃣ Clone the repository
+* Python → Intermediate
+* SQL → Beginner
+* React → Advanced
 
-   git clone https://github.com/your-username/tech-skills-checker.git
-   cd tech-skills-checker
+---
 
-2️⃣ Install dependencies
+## 📊 Skill Analysis
 
-   pip install -r requirements.txt
+The system analyzes:
 
-3️⃣ Run the application
+* User skill strength
+* Missing skills
+* Skill gap
+* Skill categories
 
-   python app.py
+---
 
-4️⃣ Open in browser
+## 💼 Job Recommendation
 
-    http://127.0.0.1:5000
+The application recommends jobs based on:
 
-🔑 Default Login
+* User skills
+* Match percentage
+* Skill relevance
 
-   Username: admin  
-   Password: admin123
+---
 
-💡 How It Works
+## 📱 Responsive Design
 
-  User creates an account or logs in
+* Mobile friendly
+* Modern UI
+* Easy navigation
+* Fast loading
 
-  User enters their skills
+---
 
-  The system checks and analyzes the skills
+# 🛠 Technologies Used
 
-  Dashboard shows results and suggestions
+## Frontend
 
-  System also checks latest trending skills
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
 
-🚀 Future Improvements
+---
 
-  AI-based smart suggestions
+## Backend
 
-  Resume analyzer
+* Python
+* Flask
 
-  Job matching system
+---
 
-  Integration with job platforms
+## Database
 
-🤝 Contributing
+* SQLite
+* MySQL (optional)
 
-  Contributions are welcome! 🎉
+---
 
-  If you want to improve this project:
+## Additional Tools
 
-  Fork the repository
-  
-  Make changes
+* Jinja Templates
+* Flask Session
+* REST APIs (optional)
 
- Create a Pull Request
+---
+
+# 📂 Project Structure
+
+```bash
+Tech-Skills-Checker/
+│
+├── app.py
+├── requirements.txt
+├── render.yaml
+├── README.md
+│
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── skills.html
+│   └── jobs.html
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── script.js
+│   │
+│   └── images/
+│
+├── routes/
+├── models/
+├── database/
+└── utils/
+```
+
+---
+
+# ⚙️ Installation Guide
+
+## Step 1 — Clone Repository
+
+```bash
+git clone <repository-link>
+```
+
+---
+
+## Step 2 — Open Project Folder
+
+```bash
+cd Tech-Skills-Checker
+```
+
+---
+
+## Step 3 — Create Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Mac/Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## Step 4 — Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 📦 requirements.txt
+
+```txt
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Werkzeug
+gunicorn
+```
+
+---
+
+## Step 5 — Run Application
+
+```bash
+python app.py
+```
+
+---
+
+## Step 6 — Open Browser
+
+```bash
+http://127.0.0.1:5000
+```
+
+---
+
+# 🌐 Deployment Guide
+
+This project is a Flask application.
+
+GitHub Pages does not support Flask backend.
+
+Use platforms like:
+
+* Render
+* Railway
+* PythonAnywhere
+
+for deployment.
+
+---
+
+# 🚀 Deploy on Render
+
+## Step 1
+
+Upload project to GitHub.
+
+---
+
+## Step 2
+
+Create `render.yaml`
+
+```yaml
+services:
+  - type: web
+    name: tech-skills-checker
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:create_app()"
+```
+
+---
+
+## Step 3
+
+Push code:
+
+```bash
+git add .
+git commit -m "deploy"
+git push
+```
+
+---
+
+## Step 4
+
+Connect GitHub repository with Render.
+
+---
+
+## Step 5
+
+Deploy project.
+
+---
+
+# 📊 How The System Works
+
+## Step 1
+
+User registers account.
+
+---
+
+## Step 2
+
+User logs into dashboard.
+
+---
+
+## Step 3
+
+User adds technical skills.
+
+---
+
+## Step 4
+
+Application analyzes user skills.
+
+---
+
+## Step 5
+
+System compares skills with jobs.
+
+---
+
+## Step 6
+
+User gets recommendations.
+
+---
+
+# 📈 Future Improvements
+
+Future updates may include:
+
+* AI-based recommendations
+* Resume analyzer
+* Interview preparation
+* Learning roadmap
+* Real-time job APIs
+* LinkedIn integration
+* Skill certification system
+
+---
+
+# 🎯 Advantages
+
+* Easy to use
+* Beginner friendly
+* Useful for students
+* Real-world project
+* Good portfolio project
+* Helps in career planning
+
+---
+
+# 🧠 Learning Outcomes
+
+By building this project, developers can learn:
+
+* Flask framework
+* Frontend integration
+* Backend development
+* Database management
+* User authentication
+* Deployment process
+* API handling
+
+---
+
+# 👨‍💻 Author
+
+Ashish Kumar
+
+---
+
+# 📜 License
